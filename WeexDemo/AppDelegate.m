@@ -26,11 +26,13 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     [WeexSDKManager setup];
+	
+	  [NSThread sleepForTimeInterval:3.0];
     
     [self.window makeKeyAndVisible];
     
     // Override point for customization after application launch.
-    [self startSplashScreen];
+    // [self startSplashScreen];
     
     return YES;
 }
