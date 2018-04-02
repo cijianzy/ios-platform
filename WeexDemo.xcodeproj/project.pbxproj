@@ -14,6 +14,7 @@
 		0A86901F1E1E7872000A3F81 /* WeexDemo-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A86901E1E1E7872000A3F81 /* WeexDemo-Info.plist */; };
 		0A996E0A1E249DAF0055CB7E /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A996E091E249DAF0055CB7E /* libstdc++.tbd */; };
 		0AE277DC1DE56A5600C6D86A /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0AE277DB1DE56A5600C6D86A /* config.xml */; };
+		39A171942072514D00130E1D /* WXNavigationHandlerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A171932072514C00130E1D /* WXNavigationHandlerImpl.m */; };
 		59EA0DA71D2E7D19004F904A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59EA0DA61D2E7D19004F904A /* Images.xcassets */; };
 		775BEE801C1E8ECC008D1629 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 775BEE7F1C1E8ECC008D1629 /* main.m */; };
 		775BEE831C1E8ECC008D1629 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 775BEE821C1E8ECC008D1629 /* AppDelegate.m */; };
@@ -59,6 +60,8 @@
 		0AE277DB1DE56A5600C6D86A /* config.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = config.xml; sourceTree = "<group>"; };
 		0B4FAFDE2AD89EAFD12DB8C2 /* Pods-WeexUITestDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexUITestDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeexUITestDemo/Pods-WeexUITestDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		37DB381D5815C06F147D4D51 /* Pods-WeexDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeexDemo/Pods-WeexDemo.release.xcconfig"; sourceTree = "<group>"; };
+		39A171922072514C00130E1D /* WXNavigationHandlerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXNavigationHandlerImpl.h; sourceTree = "<group>"; };
+		39A171932072514C00130E1D /* WXNavigationHandlerImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXNavigationHandlerImpl.m; sourceTree = "<group>"; };
 		59EA0DA61D2E7D19004F904A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7453E3641C9FA971001EB427 /* DemoDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoDefine.h; sourceTree = "<group>"; };
 		7475ACA01CD8444A0044E96C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
@@ -132,6 +135,8 @@
 		0A4A05F21E0405070046E1BE /* WeexScanner */ = {
 			isa = PBXGroup;
 			children = (
+				39A171922072514C00130E1D /* WXNavigationHandlerImpl.h */,
+				39A171932072514C00130E1D /* WXNavigationHandlerImpl.m */,
 				0A4A05F31E0405070046E1BE /* UIViewController+WXDemoNaviBar.h */,
 				0A4A05F41E0405070046E1BE /* UIViewController+WXDemoNaviBar.m */,
 				0A4A05F51E0405070046E1BE /* WXDemoViewController.h */,
@@ -256,10 +261,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 775BEEA81C1E8ECC008D1629 /* Build configuration list for PBXNativeTarget "WeexDemo" */;
 			buildPhases = (
+				F3AB557FCA3643F983E7A22E /* [CP] Check Pods Manifest.lock */,
 				0A2546EC1E00EDC5008B7C9F /* Bundle deploy server */,
 				775BEE771C1E8ECC008D1629 /* Sources */,
 				775BEE781C1E8ECC008D1629 /* Frameworks */,
 				775BEE791C1E8ECC008D1629 /* Resources */,
+				CDC663A5E1BA0C5D13F8DD23 /* [CP] Embed Pods Frameworks */,
+				FA84D37883CE8EB2E54E8DCC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -412,7 +420,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		567369891CE436EB000A646C /* ShellScript */ = {
@@ -463,6 +471,51 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeexUITestDemo/Pods-WeexUITestDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CDC663A5E1BA0C5D13F8DD23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeexDemo/Pods-WeexDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3AB557FCA3643F983E7A22E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FA84D37883CE8EB2E54E8DCC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeexDemo/Pods-WeexDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -474,6 +527,7 @@
 				0A4A05FA1E0405070046E1BE /* WXDemoViewController.m in Sources */,
 				775BEE831C1E8ECC008D1629 /* AppDelegate.m in Sources */,
 				0A4A05F91E0405070046E1BE /* UIViewController+WXDemoNaviBar.m in Sources */,
+				39A171942072514D00130E1D /* WXNavigationHandlerImpl.m in Sources */,
 				775BEE801C1E8ECC008D1629 /* main.m in Sources */,
 				0A7758D71EA0D39C00AE9815 /* WXImgLoaderDefaultImpl.m in Sources */,
 			);
