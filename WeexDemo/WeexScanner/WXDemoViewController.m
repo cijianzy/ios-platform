@@ -84,7 +84,11 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
+    if([[self.navigationController.viewControllers objectAtIndex:0] isEqual:self]) {
+        self.navigationController.navigationBarHidden = YES;
+    } else {
+        self.navigationController.navigationBarHidden = NO;
+    }
 }
 
 //TODO get height

@@ -11,7 +11,7 @@
 #import <WeexSDK/WeexSDK.h>
 #import "WXDemoViewController.h"
 #import "WXImgLoaderDefaultImpl.h"
-
+#import "WXNavigationHandlerImpl.h"
 @implementation WeexSDKManager
 
 + (void)setup;
@@ -48,7 +48,8 @@
     [WXAppConfiguration setExternalUserAgent:@"ExternalUA"];
     
     [WXSDKEngine initSDKEnvironment];
-    
+
+    [WXSDKEngine registerHandler:[WXNavigationHandlerImpl new] withProtocol:@protocol(WXNavigationProtocol)];
     [WXSDKEngine registerHandler:[WXImgLoaderDefaultImpl new] withProtocol:@protocol(WXImgLoaderProtocol)];
     
 #ifdef DEBUG
