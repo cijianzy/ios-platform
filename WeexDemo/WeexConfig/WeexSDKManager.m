@@ -12,6 +12,7 @@
 #import "WXDemoViewController.h"
 #import "WXImgLoaderDefaultImpl.h"
 #import "WXNavigationHandlerImpl.h"
+#import "WXTitleBarModule.h"
 @implementation WeexSDKManager
 
 + (void)setup;
@@ -51,7 +52,8 @@
 
     [WXSDKEngine registerHandler:[WXNavigationHandlerImpl new] withProtocol:@protocol(WXNavigationProtocol)];
     [WXSDKEngine registerHandler:[WXImgLoaderDefaultImpl new] withProtocol:@protocol(WXImgLoaderProtocol)];
-    
+    [WXSDKEngine registerModule:@"titleBar" withClass:NSClassFromString(@"WXTitleBarModule")];
+
 #ifdef DEBUG
     [WXLog setLogLevel:WXLogLevelLog];
 #endif
