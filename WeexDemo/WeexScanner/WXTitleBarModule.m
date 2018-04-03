@@ -42,7 +42,7 @@ WX_EXPORT_METHOD(@selector(setStyle:))
 - (void)showTitleBar:(bool)show
 {
     [weexInstance.viewController.navigationController setNavigationBarHidden:!show];
-    ((WXDemoViewController *)weexInstance.viewController).hideNavigationBar = !show;
+    ((WXDemoViewController *)weexInstance.viewController).navigationController.navigationBarHidden = !show;
 }
 
 @end
